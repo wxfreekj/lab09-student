@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 9: Simplified Guide to Weather Forecasting</title>
+    <link href="./shared/styles/common.css" rel="stylesheet" />
+    <link href="./shared/styles/lab-styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div
+      class="progress-indicator"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 8px 0;
+      "
+    >
+      <div
+        class="progress-bar"
+        style="width: 100%; height: 8px; background: #e0e0e0; overflow: hidden"
+      >
+        <div
+          class="progress-fill"
+          id="progressBar"
+          style="
+            height: 8px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+            display: block;
+          "
+        ></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="header">
+        <h1>🌤️ Lab 9: Simplified Guide to Weather Forecasting</h1>
+        <p class="subtitle">ESCI 240 - 30 Points</p>
+      </div>
+
+      <div class="content">
+        <!-- Introduction Section -->
+        <div class="section">
+          <h2>📚 Introduction</h2>
+          <div class="intro-box">
+            <p>
+              Weather forecasting involves predicting future weather by
+              analyzing current and recent atmospheric conditions. To make
+              accurate forecasts, meteorologists use various charts and images:
+            </p>
+
+            <ul>
+              <li>
+                <strong>500 hPa Charts:</strong> These show conditions around
+                18,000 feet, indicating upper-level wind patterns and pressure
+                systems.
+              </li>
+              <li>
+                <strong>925 hPa Charts:</strong> These represent lower
+                atmosphere conditions, indicating temperature and wind near
+                Earth's surface.
+              </li>
+              <li>
+                <strong>Satellite/Radar and Surface Observations:</strong>
+                Provide visual information on cloud cover, precipitation, and
+                the position of fronts.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Main Reference Chart -->
+          <div class="diagram-container">
+            <img
+              src="Lab9_Page_01_Image_0001.png"
+              alt="Weather Analysis Overview"
+              style="max-width: 100%; height: auto"
+            />
+          </div>
+        </div>
+
+        <!-- Weather Charts Section -->
+        <div class="section">
+          <h2>🎯 Step-by-Step Instructions for Forecasting</h2>
+          <p>
+            Use these interactive image viewers to examine the meteorological
+            charts. Click "Next" and "Previous" to navigate through each set of
+            images. Click on an image or the Zoom button to view it full-screen.
+          </p>
+
+          <div class="steps-and-loopers-layout">
+            <!-- Left Side: All 4 Steps -->
+            <div class="steps-column">
+              <!-- Step 1: 500 hPa Charts -->
+              <div class="step-box" padding="10px">
+                <div class="info-box">
+                  <h3>Step 1: Analyze 500 hPa Charts</h3>
+                  <ul>
+                    <li>
+                      Look for <strong>troughs</strong> (dips indicating
+                      potential stormy weather) and
+                      <strong>ridges</strong> (bumps indicating calmer weather)
+                    </li>
+                    <li>
+                      Identify the general direction and movement of these
+                      features
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Step 2: 925 hPa Charts -->
+              <div class="step-box">
+                <div class="info-box">
+                  <h3>Step 2: Analyze 925 hPa Charts</h3>
+                  <ul>
+                    <li>
+                      Note temperature patterns and areas of warmer or colder
+                      air
+                    </li>
+                    <li>Identify wind direction and speed at lower levels</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Step 3: Surface and Satellite Charts -->
+              <div class="step-box">
+                <div class="info-box">
+                  <h3>
+                    Step 3: Review Surface Observations and Satellite/Radar
+                    Images
+                  </h3>
+                  <ul>
+                    <li>
+                      Locate fronts (warm, cold, stationary, occluded) and their
+                      direction of movement
+                    </li>
+                    <li>
+                      Examine cloud coverage, precipitation, and storms visible
+                      on satellite and radar
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Step 4: Combine Observations -->
+              <div class="step-box">
+                <div class="info-box">
+                  <h3>Step 4: Combine Observations to Create Your Forecast</h3>
+                  <ul>
+                    <li>
+                      Predict temperature changes based on air movement and
+                      frontal passages
+                    </li>
+                    <li>
+                      Determine wind direction changes based on chart data
+                    </li>
+                    <li>
+                      Assess precipitation likelihood or severe weather
+                      potential by integrating satellite/radar imagery with
+                      surface conditions
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Image Loopers -->
+            <div class="loopers-container">
+              <!-- 500 hPa Charts Looper -->
+              <image-looper
+                title="500 hPa Upper-Level Charts"
+                images="Lab9_Page_04_Image_0001.png, Lab9_Page_05_Image_0001.png, Lab9_Page_06_Image_0001.png, Lab9_Page_07_Image_0001.png"
+              >
+              </image-looper>
+
+              <!-- 925 hPa Charts Looper -->
+              <image-looper
+                title="925 hPa Lower-Level Charts"
+                images="Lab9_Page_09_Image_0001.png, Lab9_Page_10_Image_0001.png, Lab9_Page_11_Image_0001.png, Lab9_Page_12_Image_0001.png"
+              >
+              </image-looper>
+
+              <!-- Surface and Satellite Charts Looper -->
+              <image-looper
+                title="Surface Analysis & Satellite/Radar Images"
+                images="Lab9_Page_14_Image_0001.png, Lab9_Page_15_Image_0001.png, Lab9_Page_16_Image_0001.png, Lab9_Page_17_Image_0001.png, Lab9_Page_19_Image_0001.png, Lab9_Page_20_Image_0001.png, Lab9_Page_21_Image_0001.png, Lab9_Page_22_Image_0001.png"
+              >
+              </image-looper>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example Forecast -->
+        <div class="section">
+          <h2>📋 Example Forecast Template</h2>
+          <div class="example-box">
+            <h3>Forecast for Virginia:</h3>
+            <ul>
+              <li>
+                <strong>Temperature (F):</strong> Low 60s, possibly upper 50s
+                due to rain
+              </li>
+              <li><strong>Wind Direction:</strong> Southerly</li>
+              <li>
+                <strong>Precipitation/Severe Weather:</strong> Rain likely;
+                severe weather unlikely
+              </li>
+            </ul>
+            <p>
+              <strong>Explanation:</strong> Warm, moist air moving northward due
+              to an approaching upper-level system and developing surface low
+              will increase temperatures into the 60s. However, the expected
+              rain might keep temperatures slightly cooler, in the upper 50s.
+              Sufficient warmth and low-level moisture are needed for severe
+              weather development.
+            </p>
+          </div>
+        </div>
+
+        <!-- Question 1: Wisconsin -->
+        <div class="section">
+          <h3>Question 1: Forecast for Wisconsin (10 pts)</h3>
+          <p>
+            Provide a basic forecast for Wisconsin using the information in the
+            lab.
+          </p>
+
+          <div class="form-group">
+            <label for="q1-temp">Temperature (F):</label>
+            <input
+              type="text"
+              id="q1-temp"
+              name="q1-temp"
+              placeholder="Enter temperature forecast"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="q1-wind">Wind Direction:</label>
+            <select id="q1-wind" name="q1-wind">
+              <option value="">Select direction...</option>
+              <option value="N">N</option>
+              <option value="NE">NE</option>
+              <option value="E">E</option>
+              <option value="SE">SE</option>
+              <option value="S">S</option>
+              <option value="SW">SW</option>
+              <option value="W">W</option>
+              <option value="NW">NW</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="q1-precip">Precipitation/Severe Weather:</label>
+            <textarea
+              id="q1-precip"
+              name="q1-precip"
+              rows="3"
+              placeholder="Describe precipitation and severe weather potential"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="q1-explain">Explanation:</label>
+            <textarea
+              id="q1-explain"
+              name="q1-explain"
+              rows="5"
+              placeholder="Provide a detailed explanation for your forecast using the meteorological principles from the lab..."
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Question 2: Oklahoma -->
+        <div class="section">
+          <h3>Question 2: Forecast for Oklahoma (10 pts)</h3>
+          <p>
+            Provide a basic forecast for Oklahoma using the information in the
+            lab.
+          </p>
+
+          <div class="form-group">
+            <label for="q2-temp">Temperature (F):</label>
+            <input
+              type="text"
+              id="q2-temp"
+              name="q2-temp"
+              placeholder="Enter temperature forecast"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="q2-wind">Wind Direction:</label>
+            <select id="q2-wind" name="q2-wind">
+              <option value="">Select direction...</option>
+              <option value="N">N</option>
+              <option value="NE">NE</option>
+              <option value="E">E</option>
+              <option value="SE">SE</option>
+              <option value="S">S</option>
+              <option value="SW">SW</option>
+              <option value="W">W</option>
+              <option value="NW">NW</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="q2-precip">Precipitation/Severe Weather:</label>
+            <textarea
+              id="q2-precip"
+              name="q2-precip"
+              rows="3"
+              placeholder="Describe precipitation and severe weather potential"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="q2-explain">Explanation:</label>
+            <textarea
+              id="q2-explain"
+              name="q2-explain"
+              rows="5"
+              placeholder="Provide a detailed explanation for your forecast using the meteorological principles from the lab..."
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Question 3: Alabama -->
+        <div class="section">
+          <h3>Question 3: Forecast for Alabama (10 pts)</h3>
+          <p>
+            Provide a basic forecast for Alabama using the information in the
+            lab.
+          </p>
+
+          <div class="form-group">
+            <label for="q3-temp">Temperature (F):</label>
+            <input
+              type="text"
+              id="q3-temp"
+              name="q3-temp"
+              placeholder="Enter temperature forecast"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="q3-wind">Wind Direction:</label>
+            <select id="q3-wind" name="q3-wind">
+              <option value="">Select direction...</option>
+              <option value="N">N</option>
+              <option value="NE">NE</option>
+              <option value="E">E</option>
+              <option value="SE">SE</option>
+              <option value="S">S</option>
+              <option value="SW">SW</option>
+              <option value="W">W</option>
+              <option value="NW">NW</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="q3-precip">Precipitation/Severe Weather:</label>
+            <textarea
+              id="q3-precip"
+              name="q3-precip"
+              rows="3"
+              placeholder="Describe precipitation and severe weather potential"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="q3-explain">Explanation:</label>
+            <textarea
+              id="q3-explain"
+              name="q3-explain"
+              rows="5"
+              placeholder="Provide a detailed explanation for your forecast using the meteorological principles from the lab..."
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Export Section -->
+        <div class="section">
+          <h2>💾 Export Your Work</h2>
+          <p>
+            Click the button below to generate a text file with all your
+            forecasts. Submit this file to Canvas.
+          </p>
+          <button id="exportBtn" class="export-button">
+            Export Lab Answers
+          </button>
+          <div id="exportStatus" class="export-status"></div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>ESCI 240 - Lab 9: Weather Forecasting</p>
+      </div>
+    </div>
+
+    <script src="./shared/utils/form-exporter.js"></script>
+    <script src="./shared/components/image-looper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="lab09-main.js"></script>
+  </body>
+</html>
