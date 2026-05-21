@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -481,7 +481,10 @@
           <button
             type="button"
             class="help-btn"
-            onclick="window.location.href='mailto:JMartinelli@peru.edu?subject=Lab 9 - Question/Feedback&body=Hi Dr. M,%0D%0A%0D%0AI have a question about Lab 9:%0D%0A%0D%0A'"
+            onclick="
+              window.location.href =
+                'mailto:JMartinelli@peru.edu?subject=Lab 9 - Question/Feedback&body=Hi Dr. M,%0D%0A%0D%0AI have a question about Lab 9:%0D%0A%0D%0A'
+            "
             style="
               flex: 1;
               max-width: 300px;
@@ -493,10 +496,18 @@
               cursor: pointer;
               font-size: 1em;
               font-weight: 600;
-              transition: transform 0.2s, box-shadow 0.2s;
+              transition:
+                transform 0.2s,
+                box-shadow 0.2s;
             "
-            onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 16px rgba(102, 126, 234, 0.4)'"
-            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.1)'"
+            onmouseover="
+              this.style.transform = 'translateY(-2px)';
+              this.style.boxShadow = '0 8px 16px rgba(102, 126, 234, 0.4)';
+            "
+            onmouseout="
+              this.style.transform = 'translateY(0)';
+              this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+            "
           >
             ❓ Questions, concerns, feedback, or need help?
           </button>
@@ -505,6 +516,7 @@
       </div>
     </div>
 
+    <script src="../shared/utils/question-pager.js"></script>
     <script src="./shared/utils/form-exporter.js"></script>
     <script src="./shared/components/image-looper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
