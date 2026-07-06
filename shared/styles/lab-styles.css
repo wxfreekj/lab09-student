@@ -122,9 +122,11 @@ body {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.question:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+@media (hover: hover) and (pointer: fine) {
+  .question:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
 }
 
 .question-label {
@@ -204,6 +206,7 @@ textarea {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .inline-inputs input[type="number"],
@@ -286,9 +289,11 @@ button {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+@media (hover: hover) and (pointer: fine) {
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .btn-export {
@@ -510,9 +515,11 @@ button:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.looper-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+@media (hover: hover) and (pointer: fine) {
+  .looper-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .looper-btn:active:not(:disabled) {
@@ -596,5 +603,33 @@ button:hover {
 
   .looper-image-container[data-zoomed="false"] .looper-image {
     max-width: 80%;
+  }
+}
+
+/* Tighten chrome padding on phones so more width goes to content */
+@media (max-width: 480px) {
+  body {
+    padding: 8px;
+  }
+
+  .container {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .header {
+    padding: 16px 12px;
+  }
+
+  .content {
+    padding: 8px;
+  }
+
+  .looper-image-container {
+    min-height: 260px;
+  }
+
+  .looper-image-container[data-zoomed="false"] {
+    max-height: 380px;
   }
 }

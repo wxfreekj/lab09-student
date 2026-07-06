@@ -86,6 +86,15 @@ class ImageLooper extends HTMLElement {
 
     // Keyboard navigation
     document.addEventListener("keydown", (e) => {
+      const active = document.activeElement;
+      const isTypingTarget =
+        active &&
+        (active.tagName === "INPUT" ||
+          active.tagName === "TEXTAREA" ||
+          active.tagName === "SELECT" ||
+          active.isContentEditable);
+      if (isTypingTarget) return;
+
       if (e.key === "ArrowLeft" && !this.isZoomed) {
         this.previousImage();
       } else if (e.key === "ArrowRight" && !this.isZoomed) {
@@ -108,11 +117,13 @@ class ImageLooper extends HTMLElement {
       img.style.cursor = "zoom-out";
       img.title = "Click to zoom out (or press ESC)";
       zoomBtn.textContent = "↩️ Exit Zoom";
+      document.body.style.overflow = "hidden";
     } else {
       container.setAttribute("data-zoomed", "false");
       img.style.cursor = "zoom-in";
       img.title = "Click to zoom";
       zoomBtn.textContent = "🔍 Zoom";
+      document.body.style.overflow = "";
     }
   }
 

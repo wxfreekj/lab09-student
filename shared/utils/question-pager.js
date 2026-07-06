@@ -141,8 +141,20 @@
     prevBtn.addEventListener("click", () => showQuestion(index - 1, true));
     nextBtn.addEventListener("click", () => showQuestion(index + 1, true));
 
+    function isTypingTarget(el) {
+      if (!el) return false;
+      const tag = el.tagName;
+      return (
+        tag === "INPUT" ||
+        tag === "TEXTAREA" ||
+        tag === "SELECT" ||
+        el.isContentEditable
+      );
+    }
+
     document.addEventListener("keydown", (e) => {
       if (e.altKey || e.ctrlKey || e.metaKey) return;
+      if (isTypingTarget(document.activeElement)) return;
       if (e.key === "ArrowLeft") showQuestion(index - 1, true);
       if (e.key === "ArrowRight") showQuestion(index + 1, true);
     });

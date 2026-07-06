@@ -86,8 +86,10 @@
   font-size: 14px;
 }
 
-.btn:hover {
-  background: #616161;
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover {
+    background: #616161;
+  }
 }
 
 .btn-save {
@@ -95,8 +97,10 @@
   color: #fff;
 }
 
-.btn-save:hover {
-  background: #b71c1c;
+@media (hover: hover) and (pointer: fine) {
+  .btn-save:hover {
+    background: #b71c1c;
+  }
 }
 
 /* === STATION MODEL BUILDER SPECIFIC STYLES === */
@@ -156,9 +160,11 @@
   border-radius: 8px;
 }
 
-.draggable-label:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+@media (hover: hover) and (pointer: fine) {
+  .draggable-label:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .draggable-label.dragging {
