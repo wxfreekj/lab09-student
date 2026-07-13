@@ -61,6 +61,9 @@
         position: sticky;
         top: 58px;
         z-index: 900;
+        /* keep the nav visible below the fixed progress bar when
+           scrollIntoView targets it */
+        scroll-margin-top: 32px;
       }
 
       .question-pager-status {
@@ -120,6 +123,14 @@
       });
 
       const current = questionContainers[index];
+
+      // Keep the pager directly above whichever question is active, so
+      // Prev/Next never end up stranded elsewhere on the page (questions
+      // can be interleaved with always-visible figures and info sections).
+      if (nav.nextElementSibling !== current || nav.parentNode !== current.parentNode) {
+        current.parentNode.insertBefore(nav, current);
+      }
+
       current
         .querySelectorAll(".collapsible-header.is-collapsed")
         .forEach((h) => {
@@ -134,7 +145,8 @@
       nextBtn.disabled = index === questionContainers.length - 1;
 
       if (scrollIntoView) {
-        current.scrollIntoView({ behavior: "smooth", block: "start" });
+        // Scroll to the pager so the question lands right beneath it.
+        nav.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
 
